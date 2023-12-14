@@ -14,7 +14,7 @@
                 </a>
            </div>
             <div class="col-sm-9" style="margin-top: 15px;">
-                <h1>QuilhIA</h1>
+                <h1>quilhIA</h1>
                 <h5>Educação e segurança juntas na direção certa</h5>
            </div>           
        </div>

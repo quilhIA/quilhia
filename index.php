@@ -12,7 +12,7 @@ $hostname = "localhost";
 $link = mysqli_connect( $hostname, $user, $password, $database ) or die( ' Erro na conexão ' ); 
 
 # Executa a query desejada 
-$query = "SELECT id, nome, serie,data FROM alunos"; 
+$query = "SELECT id, nome, serie,data, turma FROM alunos"; 
 $result_query = mysqli_query($link, $query ) or die(' Erro na query:' . $query . ' ' . mysql_error() ); 
 ?>
 
@@ -33,7 +33,7 @@ $result_query = mysqli_query($link, $query ) or die(' Erro na query:' . $query .
                 </a>
            </div>
            <div class="col-sm-9">
-                <h1>QuilhIA</h1>
+                <h1>quilhIA</h1>
                 <h5>Educação e segurança juntas na direção certa</h5>
            </div>           
        </div>
@@ -51,6 +51,7 @@ $result_query = mysqli_query($link, $query ) or die(' Erro na query:' . $query .
                         <th>Nome</th>
                         <th>Escola</th>
                         <th>Série</th>
+                        <th>Turma</th>
                         <th>Status</th>                        
                     </tr>
                 </thead>
@@ -59,7 +60,7 @@ $result_query = mysqli_query($link, $query ) or die(' Erro na query:' . $query .
                         # Exibe os registros na tela 
                         while ($row = mysqli_fetch_array( $result_query )) { 
                             if ($row['id'] == 2) {
-                                echo "<tr><td><a href='aluno.php?id=".$row['id']."'>".$row['nome']."</a></td><td>Escola The Wave</td><td>". $row['serie']."</td>"
+                                echo "<tr><td><a href='aluno.php?id=".$row['id']."'>".$row['nome']."</a></td><td>Escola The Wave</td><td>". $row['serie']."</td><td>". $row['turma']."</td>"
                          ?>        
                                 <td>
                                     <div style='border-radius: 25px; background: #FA8072; color: #FA8072;' class='col-sm-6'>
@@ -69,7 +70,7 @@ $result_query = mysqli_query($link, $query ) or die(' Erro na query:' . $query .
                                 </tr> 
                         <?php 
                             } else {
-                                echo "<tr><td><a href='aluno.php?id=".$row['id']."'>".$row['nome']."</a></td><td>Escola The Wave</td><td>". $row['serie']."</td><td>                                    <div style='border-radius: 25px; background: #98FB98; color: #98FB98;' class='col-sm-6'>
+                                echo "<tr><td><a href='aluno.php?id=".$row['id']."'>".$row['nome']."</a></td><td>Escola The Wave</td><td>". $row['serie']."</td><td>". $row['turma']."</td><td>                                    <div style='border-radius: 25px; background: #98FB98; color: #98FB98;' class='col-sm-6'>
                                         1
                                     </div></td></tr>"; 
                             }

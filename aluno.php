@@ -12,7 +12,7 @@ $hostname = "localhost";
 $link = mysqli_connect( $hostname, $user, $password, $database ) or die( ' Erro na conexão ' ); 
 
 # Executa a query desejada 
-$query = "SELECT nome, serie,data FROM alunos where id = ".$_GET['id']; 
+$query = "SELECT nome, serie,data, turma FROM alunos where id = ".$_GET['id']; 
 $result_query = mysqli_query($link, $query ) or die(' Erro na query:' . $query . ' ' . mysql_error() ); 
 $row = mysqli_fetch_array( $result_query )
 
@@ -35,7 +35,7 @@ $row = mysqli_fetch_array( $result_query )
                 </a>
            </div>
             <div class="col-sm-9" style="margin-top: 15px;">
-                <h1>QuilhIA</h1>
+                <h1>quilhIA</h1>
                 <h5>Educação e segurança juntas na direção certa</h5>
            </div>           
        </div>
@@ -57,7 +57,7 @@ $row = mysqli_fetch_array( $result_query )
                     <div class="col-sm-6" style="margin-left: 20px;">
                         <?php 
                             # Exibe os registros na tela 
-                            echo $row['nome']."<br/>".$row['serie']."<br/>Escola XPTO"; 
+                            echo $row['nome']."<br/>".$row['serie']."<br/>Escola XPTO<br/>Turma ".$row['turma']; 
                  
                         ?> 
                     </div>
@@ -132,7 +132,7 @@ $row = mysqli_fetch_array( $result_query )
                         <tbody>
                             <tr>
                                 <th>15/12/2023</th>
-                                <th>07:12:29</th>
+                                <th>08:12:29</th>
                                 <th></th>
                                 <th>                    
                                     <div style="border-radius: 25px; background: #FA8072; color: #FA8072;" class="col-sm-6">
@@ -152,7 +152,7 @@ $row = mysqli_fetch_array( $result_query )
                             </tr>
                             <tr>
                                 <th>13/12/2023</th>
-                                <th>06:59:34</th>
+                                <th>07:59:34</th>
                                 <th>12:59:34</th>
                                 <th>                    
                                     <div style="border-radius: 25px; background: #98FB98; color: #98FB98;" class="col-sm-6">
@@ -162,7 +162,7 @@ $row = mysqli_fetch_array( $result_query )
                             </tr>
                             <tr>
                                 <th>12/12/2023</th>
-                                <th>07:59:34</th>
+                                <th>08:59:34</th>
                                 <th>12:30:34</th>
                                 <th>                    
                                     <div style="border-radius: 25px; background: #FA8072; color: #FA8072;" class="col-sm-6">
@@ -172,7 +172,7 @@ $row = mysqli_fetch_array( $result_query )
                             </tr>     
                             <tr>
                                 <th>11/12/2023</th>
-                                <th>07:27:34</th>
+                                <th>08:27:34</th>
                                 <th>12:10:34</th>
                                 <th>                    
                                     <div style="border-radius: 25px; background: #FA8072; color: #FA8072;" class="col-sm-6">
@@ -222,7 +222,7 @@ $row = mysqli_fetch_array( $result_query )
                         <div class="col-sm-12 card">
                             <div class="card-body">
                                 <h6 class="card-text">Média Horário Checkin</h6>
-                                <p class="card-text">07:20:01</p>
+                                <p class="card-text">08:20:01</p>
                             </div>
                         </div>
                     </div>
